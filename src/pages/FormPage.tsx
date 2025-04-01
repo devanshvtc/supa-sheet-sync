@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,7 +22,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { submitToSupabase } from "@/lib/supabase";
+import { submitToSupabase, FormData as SupabaseFormData } from "@/lib/supabase";
 import { submitToGoogleSheets } from "@/lib/google-sheets";
 import { Loader2 } from "lucide-react";
 
@@ -54,7 +53,7 @@ const FormPage = () => {
     defaultValues: {
       name: "",
       title: "",
-      disposition: undefined,
+      disposition: "Supporter",  // Set a default value to avoid undefined
       relationship: "",
       email: "",
       phoneNumber: "",
@@ -66,7 +65,7 @@ const FormPage = () => {
     
     try {
       // Add timestamp to the data
-      const submissionData = {
+      const submissionData: SupabaseFormData = {
         ...data,
         timestamp: new Date().toISOString(),
       };

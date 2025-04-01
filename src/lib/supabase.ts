@@ -1,9 +1,9 @@
 
 // Define the form data type to match our schema
-type FormData = {
+export type FormData = {
   name: string;
   title: string;
-  disposition: string;
+  disposition: "Supporter" | "Neutral" | "Detractor";
   relationship: string;
   email: string;
   phoneNumber: string;

@@ -1,15 +1,6 @@
 
-// Define the form data type to match our schema
-type FormData = {
-  name: string;
-  title: string;
-  disposition: string;
-  relationship: string;
-  email: string;
-  phoneNumber: string;
-  timestamp: string;
-  [key: string]: any;
-};
+// Import the FormData type from the Supabase file to ensure consistency
+import { FormData } from "./supabase";
 
 /**
  * Submits form data to Google Sheets
