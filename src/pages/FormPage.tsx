@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -65,8 +66,14 @@ const FormPage = () => {
     
     try {
       // Add timestamp to the data
+      // Explicitly cast data as SupabaseFormData to ensure all required fields are present
       const submissionData: SupabaseFormData = {
-        ...data,
+        name: data.name,
+        title: data.title,
+        disposition: data.disposition,
+        relationship: data.relationship,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
         timestamp: new Date().toISOString(),
       };
       
