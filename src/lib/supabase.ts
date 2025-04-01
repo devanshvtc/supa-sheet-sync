@@ -1,9 +1,13 @@
 
-// This is a placeholder file for Supabase integration
-// Once you connect to Supabase, this file will be updated with the actual implementation
-
-// Define a generic type for form data
+// Define the form data type to match our schema
 type FormData = {
+  name: string;
+  title: string;
+  disposition: string;
+  relationship: string;
+  email: string;
+  phoneNumber: string;
+  timestamp: string;
   [key: string]: any;
 };
 
@@ -15,14 +19,14 @@ type FormData = {
  * 3. This function will be updated with actual Supabase client code
  */
 export async function submitToSupabase(data: FormData): Promise<void> {
-  console.log("Supabase submission placeholder:", data);
+  console.log("Supabase submission:", data);
   
   // Simulate network delay for demo purposes
   await new Promise((resolve) => setTimeout(resolve, 500));
   
   // Once connected to Supabase, this function will insert data into your table
   // Example implementation (will be added when connected):
-  // await supabase.from('form_submissions').insert([data]);
+  // await supabase.from('contact_submissions').insert([data]);
   
   return Promise.resolve();
 }

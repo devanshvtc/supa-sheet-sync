@@ -1,23 +1,27 @@
 
-// This is a placeholder file for Google Sheets integration
-// This will be implemented with either Google Sheets API or a middleware service
-
-// Define a generic type for form data
+// Define the form data type to match our schema
 type FormData = {
+  name: string;
+  title: string;
+  disposition: string;
+  relationship: string;
+  email: string;
+  phoneNumber: string;
+  timestamp: string;
   [key: string]: any;
 };
 
 /**
  * Submits form data to Google Sheets
  * Note: This is a placeholder function. To make it work:
- * 1. Set up a Google Sheet with appropriate columns
+ * 1. Set up a Google Sheet with appropriate columns (Name, Title, Disposition, etc.)
  * 2. Use one of these methods:
  *    - Create a Google Apps Script web app that receives form data
  *    - Set up a Zapier/Make.com integration that connects to your sheet
  *    - Use an Edge Function (when connected to Supabase) that uses Google Sheets API
  */
 export async function submitToGoogleSheets(data: FormData): Promise<void> {
-  console.log("Google Sheets submission placeholder:", data);
+  console.log("Google Sheets submission:", data);
   
   // Simulate network delay for demo purposes
   await new Promise((resolve) => setTimeout(resolve, 500));
