@@ -8,7 +8,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <div className="flex flex-col md:flex-row min-h-screen">
         {/* Left side with text */}
-        <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-900 to-teal-500 flex items-center justify-center p-8 md:p-16">
+        <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-900 to-teal-500 from-10% to-90% flex items-center justify-center p-8 md:p-16">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
             Key Relationship Tracker
           </h1>
